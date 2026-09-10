@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mikey's Studio | Modern Web Design</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: #0b0f19; color: #f8fafc; padding: 30px 16px; text-align: center; }
+    
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.1); color: #38bdf8; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 16px; }
+    .dot { width: 7px; height: 7px; background: #22c55e; border-radius: 50%; display: inline-block; }
+    
+    h1 { font-size: 26px; line-height: 1.3; margin-bottom: 12px; font-weight: 800; }
+    h1 span { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    p.sub { color: #94a3b8; font-size: 14px; line-height: 1.5; margin-bottom: 25px; }
+
+    .stats { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+    .stat-item { background: #111827; border: 1px solid #1f2937; padding: 12px 16px; border-radius: 10px; }
+    .stat-num { font-size: 18px; font-weight: 800; color: #38bdf8; }
+    .stat-lbl { font-size: 11px; color: #64748b; }
+
+    .section-title { font-size: 18px; text-align: left; margin: 25px auto 12px auto; max-width: 330px; color: #e2e8f0; font-weight: 700; }
+
+    .card { background: #111827; border-radius: 12px; padding: 16px; margin: 12px auto; max-width: 330px; text-align: left; border: 1px solid #1f2937; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    .card h3 { color: #f1f5f9; font-size: 15px; margin-bottom: 6px; }
+    .card p { color: #94a3b8; font-size: 13px; line-height: 1.4; }
+
+    .price-box { background: linear-gradient(180deg, #111827 0%, #0b0f19 100%); border: 1px solid #38bdf8; border-radius: 14px; padding: 22px; margin: 25px auto; max-width: 330px; text-align: left; position: relative; }
+    .price-badge { position: absolute; top: -10px; right: 15px; background: #38bdf8; color: #0b0f19; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 10px; }
+    .price-val { font-size: 32px; font-weight: 800; color: #ffffff; margin: 8px 0; }
+    .price-val span { font-size: 14px; color: #64748b; font-weight: 400; }
+    .features-list { list-style: none; margin: 15px 0; font-size: 13px; color: #cbd5e1; }
+    .features-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .features-list li::before { content: "✓"; color: #22c55e; font-weight: bold; }
+
+    .btn-wa { display: flex; align-items: center; justify-content: center; gap: 8px; background: #22c55e; color: #ffffff; text-decoration: none; padding: 14px 20px; border-radius: 10px; font-weight: 700; font-size: 15px; margin-top: 15px; }
+    .btn-wa:active { transform: scale(0.97); }
+    footer { margin-top: 30px; font-size: 12px; color: #475569; }
+    
+    body {
+  background: 
+    linear-gradient(rgba(11, 15, 25, 0.88), rgba(11, 15, 25, 0.95)),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200') no-repeat center center fixed;
+  background-size: cover;
+  color: #f8fafc;
+  padding: 30px 16px;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="badge"><span class="dot"></span> ACCEPTING NEW CLIENTS</div>
+  <h1>Websites That Turn Clicks Into <span>Paying Customers</span></h1>
+  <p class="sub">Custom-coded, lightning fast landing pages built specifically for gyms, sports turfs, and local brands.</p>
+
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-num">&lt;48h</div>
+      <div class="stat-lbl">Fast Delivery</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-lbl">Mobile Ready</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0%</div>
+      <div class="stat-lbl">Bloat / Lag</div>
+    </div>
+  </div>
+
+  <div class="section-title">What I Deliver</div>
+  
+  <div class="card">
+    <h3>⚡ High-Speed Architecture</h3>
+    <p>Zero unnecessary plugins or heavy templates. Your site opens in under 1 second on mobile networks.</p>
+  </div>
+
+  <div class="card">
+    <h3>📲 Direct WhatsApp Conversion</h3>
+    <p>Visitors tap one prominent button to chat directly with your sales or reception desk.</p>
+  </div>
+
+  <div class="card">
+    <h3>📍 Local SEO & Maps Setup</h3>
+    <p>Optimized structure so nearby customers find you first on Google search.</p>
+  </div>
+
+  <div class="price-box">
+    <div class="price-badge">POPULAR</div>
+    <h3 style="font-size: 16px; color: #94a3b8;">Complete Launch Package</h3>
+    <div class="price-val">₹2,499 <span>/ one-time</span></div>
+    
+    <ul class="features-list">
+      <li>Single-page modern responsive site</li>
+      <li>Custom design matching your brand</li>
+      <li>One-click WhatsApp booking button</li>
+      <li>Free hosting setup on your domain</li>
+    </ul>
+
+    <!-- Replace 919876543210 with your actual phone number -->
+    <a class="btn-wa" href="https://wa.me/9318440752?text=Hi,%20I%20want%20to%20get%20a%20website%20built">
+      Book Your Website on WhatsApp
+    </a>
+  </div>
+
+  <footer>© 2026 Mikey's Studio. Designed for speed.</footer>
+
+
+</body>
+</html>
