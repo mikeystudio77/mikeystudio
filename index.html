@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHADOW REIGN | Official Syndicate Hub</title>
+  <title>SHADOW REIGN | AOT:R Clan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #050608;
-      --bg-card: #0d0f15;
-      --bg-elevated: #131722;
+      --bg-base: #040507;
+      --bg-card: rgba(13, 16, 23, 0.85);
       --crimson: #e11d48;
       --crimson-glow: rgba(225, 29, 72, 0.45);
       --discord: #5865f2;
-      --discord-glow: rgba(88, 101, 242, 0.35);
-      --gold: #fbbf24;
+      --discord-glow: rgba(88, 101, 242, 0.4);
+      --gold: #f59e0b;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --border: rgba(225, 29, 72, 0.2);
+      --border: rgba(225, 29, 72, 0.22);
+      --border-subtle: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -27,35 +27,40 @@
       color: var(--text-main);
       font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.6;
-      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(225, 29, 72, 0.15) 0%, transparent 50%),
+        linear-gradient(180deg, rgba(4, 5, 7, 0.7) 0%, rgba(4, 5, 7, 0.95) 100%),
+        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 20px;
-      background: rgba(5, 6, 8, 0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 18px 24px;
+      background: rgba(4, 5, 7, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
     }
     .logo {
       font-family: 'Cinzel', serif;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 900;
       letter-spacing: 2px;
-      color: #fff;
     }
     .logo span { color: var(--crimson); text-shadow: 0 0 12px var(--crimson-glow); }
     .status-badge {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 700;
       color: #22c55e;
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.25);
-      padding: 4px 10px;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 5px 12px;
       border-radius: 99px;
       display: flex;
       align-items: center;
@@ -64,98 +69,109 @@
     .status-dot {
       width: 7px; height: 7px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e;
     }
-    .hero {
-      padding: 46px 20px 32px;
-      text-align: center;
-      background: radial-gradient(circle at 50% 15%, rgba(225, 29, 72, 0.18) 0%, transparent 75%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    .badge-pill {
+    .container { width: 100%; max-width: 850px; margin: 0 auto; padding: 0 20px; }
+    .hero { padding: 50px 0 35px; text-align: center; }
+    .hero-badge {
       font-family: 'Cinzel', serif;
       font-size: 0.75rem;
       font-weight: 800;
       letter-spacing: 2px;
       color: var(--crimson);
-      background: rgba(225, 29, 72, 0.1);
+      background: rgba(225, 29, 72, 0.12);
       border: 1px solid var(--border);
-      padding: 5px 14px;
+      padding: 6px 16px;
       border-radius: 99px;
       display: inline-block;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .hero h1 {
       font-family: 'Cinzel', serif;
-      font-size: 2.3rem;
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
       font-weight: 900;
-      line-height: 1.15;
       text-transform: uppercase;
       margin-bottom: 12px;
     }
     .hero p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--text-muted);
-      margin-bottom: 24px;
-      max-width: 480px;
-      margin-inline: auto;
+      max-width: 520px;
+      margin: 0 auto 28px;
     }
-    .btn-stack { display: flex; flex-direction: column; gap: 12px; max-width: 400px; margin: 0 auto; }
-    .btn-main {
+    .action-group { display: flex; flex-direction: column; gap: 14px; max-width: 440px; margin: 0 auto; }
+    .btn-discord {
       display: flex; align-items: center; justify-content: center; gap: 10px;
       background: var(--discord); color: #fff; text-decoration: none;
-      font-weight: 700; font-size: 0.95rem; padding: 15px 20px; border-radius: 12px;
-      box-shadow: 0 10px 30px var(--discord-glow);
+      font-weight: 800; font-size: 1rem; padding: 16px 24px; border-radius: 14px;
+      box-shadow: 0 10px 35px var(--discord-glow);
     }
-    .btn-secondary {
+    .btn-values {
       display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: rgba(251, 191, 36, 0.08); border: 1px solid rgba(251, 191, 36, 0.3);
-      color: var(--gold); text-decoration: none; font-weight: 700; font-size: 0.88rem;
-      padding: 13px 20px; border-radius: 12px;
+      background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.35);
+      color: var(--gold); text-decoration: none; font-weight: 700; font-size: 0.92rem;
+      padding: 14px 20px; border-radius: 14px;
     }
-    .stats-row {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 22px 20px;
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 34px 0 20px;
     }
-    .stat-box {
-      background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 12px; padding: 12px 6px; text-align: center;
+    .stat-pill {
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 14px; padding: 14px 10px; text-align: center;
     }
-    .stat-number { font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 900; color: var(--crimson); }
-    .stat-text { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; }
-    
-    .section-head {
-      font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 800;
-      padding: 16px 20px 8px; letter-spacing: 1px;
+    .stat-num { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 900; color: var(--crimson); }
+    .stat-name { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; }
+
+    .section-header {
+      font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 900;
+      letter-spacing: 1px; text-transform: uppercase; margin: 40px 0 16px;
       display: flex; align-items: center; gap: 10px;
     }
-    .section-head::before {
-      content: ''; width: 4px; height: 18px; background: var(--crimson); border-radius: 2px;
+    .section-header::before {
+      content: ''; width: 4px; height: 20px; background: var(--crimson); border-radius: 2px;
     }
-    .cards-list { padding: 12px 20px; display: flex; flex-direction: column; gap: 12px; }
-    .item-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 14px; padding: 16px;
+    .grid-duo { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 640px) { .grid-duo { grid-template-columns: 1fr 1fr; } }
+    .custom-card {
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 14px; padding: 20px;
     }
-    .item-card.highlight { border-color: rgba(251, 191, 36, 0.35); }
-    .card-title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; }
-    .card-tag { font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; text-transform: uppercase; }
-    .tag-crimson { background: rgba(225, 29, 72, 0.15); color: var(--crimson); }
-    .tag-gold { background: rgba(251, 191, 36, 0.15); color: var(--gold); }
-    .card-desc { font-size: 0.85rem; color: var(--text-muted); }
+    .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .card-title { font-size: 1rem; font-weight: 700; color: #fff; }
+    .badge-tag {
+      font-size: 0.68rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase;
+    }
+    .tag-red { background: rgba(225, 29, 72, 0.2); color: var(--crimson); }
+    .tag-yellow { background: rgba(245, 158, 11, 0.2); color: var(--gold); }
+    .tag-purple { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
+    .tag-blue { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+    .card-text { font-size: 0.88rem; color: var(--text-muted); }
 
-    /* Clan Hierarchy / Staff */
-    .staff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px 20px; }
-    .staff-card {
-      background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 12px; padding: 14px; text-align: center;
+    .rule-list { display: flex; flex-direction: column; gap: 10px; }
+    .rule-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      padding: 14px 18px; border-radius: 12px; font-size: 0.88rem;
     }
-    .staff-role { font-size: 0.7rem; font-weight: 700; color: var(--crimson); text-transform: uppercase; }
-    .staff-name { font-weight: 700; font-size: 0.95rem; margin-top: 2px; }
+    .rule-index { font-family: 'Cinzel', serif; font-weight: 900; color: var(--crimson); }
+
+    .staff-container { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .staff-card {
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 14px; padding: 18px; text-align: center;
+    }
+    .staff-role-badge { font-size: 0.72rem; font-weight: 800; color: var(--crimson); text-transform: uppercase; }
+    .staff-username { font-size: 1.05rem; font-weight: 800; color: #fff; margin-top: 2px; }
+    .staff-desc { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
 
     footer {
-      text-align: center; padding: 28px 20px; border-top: 1px solid rgba(255, 255, 255, 0.05);
-      margin-top: 24px; font-size: 0.78rem; color: var(--text-muted);
+      text-align: center; padding: 35px 20px 25px; border-top: 1px solid var(--border-subtle);
+      margin-top: 45px;
     }
-    .credits {
-      display: inline-block; margin-top: 8px; color: #38bdf8; text-decoration: none; font-weight: 600;
+    .footer-brand { font-family: 'Cinzel', serif; font-weight: 900; font-size: 1.05rem; letter-spacing: 2px; }
+    .footer-desc { font-size: 0.8rem; color: var(--text-muted); margin: 4px 0 14px; }
+    .credits-link {
+      display: inline-block; color: #38bdf8; text-decoration: none; font-weight: 700;
+      font-size: 0.85rem; padding: 6px 14px; border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 99px; background: rgba(56, 189, 248, 0.05);
     }
   </style>
 </head>
@@ -165,76 +181,119 @@
     <div class="logo">SHADOW <span>REIGN</span></div>
     <div class="status-badge">
       <div class="status-dot"></div>
-      500+ ACTIVE
+      500+ MEMBERS
     </div>
   </header>
 
-  <section class="hero">
-    <div class="badge-pill">AOT: REVOLUTION CLAN</div>
-    <h1>CONQUER THE TITANS</h1>
-    <p>The premier syndicate for daily raid carries, high-tier trade economy, and competitive clan wars.</p>
-    
-    <div class="btn-stack">
-      <a href="https://discord.gg/Y4nbVB8fq" class="btn-main" target="_blank">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.894a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
-        </svg>
-        JOIN OFFICIAL DISCORD (500+)
-      </a>
-      <a href="https://aotrevolution.com/changes" class="btn-secondary" target="_blank">
-        ⚡ OFFICIAL VALUE LIST & PATCH NOTES
-      </a>
-    </div>
-  </section>
+  <main class="container">
 
-  <div class="stats-row">
-    <div class="stat-box">
-      <div class="stat-number">500+</div>
-      <div class="stat-text">Warriors</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">24/7</div>
-      <div class="stat-text">Active Raids</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">TIER 1</div>
-      <div class="stat-text">Syndicate</div>
-    </div>
-  </div>
-
-  <div class="section-head">Clan Squads & Divisions</div>
-  <div class="cards-list">
-    <div class="item-card highlight">
-      <div class="card-title">
-        <span>Vanguard Raid Team</span>
-        <span class="card-tag tag-gold">Top Tier</span>
+    <section class="hero">
+      <div class="hero-badge">OFFICIAL AOT:R CLAN</div>
+      <h1>SHADOW REIGN</h1>
+      <p>Daily raid carries, Aberrant missions, trusted trading, and active clan giveaways.</p>
+      
+      <div class="action-group">
+        <a href="https://discord.gg/Y4nbVB8fq" class="btn-discord" target="_blank">
+          JOIN OUR DISCORD (500+)
+        </a>
+        <a href="https://aotrevolution.com/changes" class="btn-values" target="_blank">
+          ⚡ AOT:R VALUE LIST & PATCH NOTES
+        </a>
       </div>
-      <div class="card-desc">Elite members tackling Aberrant and Shifting raids for maximum scroll and artifact drop efficiency.</div>
-    </div>
-    <div class="item-card">
-      <div class="card-title">
-        <span>Trade & Economy Desk</span>
-        <span class="card-tag tag-crimson">Market</span>
-      </div>
-      <div class="card-desc">Verified middlemen and real-time pricing analysis to ensure secure trading within the community.</div>
-    </div>
-  </div>
 
-  <div class="section-head">Command Staff</div>
-  <div class="staff-grid">
-    <div class="staff-card">
-      <div class="staff-role">Syndicate Leader</div>
-      <div class="staff-name">L | Greatest Detect</div>
+      <div class="stats-bar">
+        <div class="stat-pill">
+          <div class="stat-num">500+</div>
+          <div class="stat-name">Members</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num">24/7</div>
+          <div class="stat-name">Active Raids</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num">DAILY</div>
+          <div class="stat-name">Carries</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clan Offerings matching L's exact feedback -->
+    <div class="section-header">What We Offer</div>
+    <div class="grid-duo">
+      <div class="custom-card">
+        <div class="card-top">
+          <div class="card-title">Missions & Carries</div>
+          <span class="badge-tag tag-red">Raids</span>
+        </div>
+        <p class="card-text">Daily mission runs, Aberrant clears, and free carries for clan members to easily farm scrolls and materials.</p>
+      </div>
+
+      <div class="custom-card">
+        <div class="card-top">
+          <div class="card-title">Trading</div>
+          <span class="badge-tag tag-yellow">Market</span>
+        </div>
+        <p class="card-text">Official middleman support for safe and verified trades on cosmetics, scrolls, and rare items.</p>
+      </div>
+
+      <div class="custom-card">
+        <div class="card-top">
+          <div class="card-title">Frequent Giveaways</div>
+          <span class="badge-tag tag-purple">Giveaways</span>
+        </div>
+        <p class="card-text">Regular clan giveaways including free spins, in-game perks, Robux, and exclusive carry slots.</p>
+      </div>
+
+      <div class="custom-card">
+        <div class="card-top">
+          <div class="card-title">Events</div>
+          <span class="badge-tag tag-blue">Community</span>
+        </div>
+        <p class="card-text">Exciting clan tournaments, speedrun challenges, and custom community game nights with rewards.</p>
+      </div>
     </div>
-    <div class="staff-card">
-      <div class="staff-role">Head Staff / Dev</div>
-      <div class="staff-name">Mikey</div>
+
+    <!-- Clan Rules -->
+    <div class="section-header">Clan Rules</div>
+    <div class="rule-list">
+      <div class="rule-item">
+        <span class="rule-index">01</span>
+        <div><strong>No Toxicity:</strong> Respect members in chat, Discord, and in-game lobbies. Zero toxicity tolerated.</div>
+      </div>
+      <div class="rule-item">
+        <span class="rule-index">02</span>
+        <div><strong>Use Middleman:</strong> Always trade via trusted server staff middleman to avoid any scams.</div>
+      </div>
+      <div class="rule-item">
+        <span class="rule-index">03</span>
+        <div><strong>Stay Active:</strong> Participate in missions, carries, and clan events to keep your member status.</div>
+      </div>
     </div>
-  </div>
+
+    <!-- Leadership Staff -->
+    <div class="section-header">Clan Leadership</div>
+    <div class="staff-container">
+      <div class="staff-card">
+        <div class="staff-role-badge">Clan Owner</div>
+        <div class="staff-username">L | Greatest Detect</div>
+        <div class="staff-desc">Founder & Clan Leader</div>
+      </div>
+
+      <div class="staff-card">
+        <div class="staff-role-badge">Head Staff / Web Dev</div>
+        <div class="staff-username">Mikey</div>
+        <div class="staff-desc">Website & Clan Support</div>
+      </div>
+    </div>
+
+  </main>
 
   <footer>
-    <p>SHADOW REIGN SYNDICATE &copy; 2026. All Rights Reserved.</p>
-    <a href="https://mikeystudio77.github.io/mikeystudio/" class="credits" target="_blank">Crafted by Mikey's Studio</a>
+    <div class="footer-brand">SHADOW <span>REIGN</span></div>
+    <p class="footer-desc">&copy; 2026 Shadow Reign. All rights reserved.</p>
+    <a href="https://mikeystudio77.github.io/mikeystudio/" class="credits-link" target="_blank">
+      Built by Mikey's Studio
+    </a>
   </footer>
 
 </body>
