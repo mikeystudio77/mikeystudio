@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHADOW REIGN | The Final Stand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #07070a;
+      --bg-card: #0f1015;
+      --crimson: #dc2626;
+      --crimson-glow: rgba(220, 38, 38, 0.4);
+      --discord: #5865f2;
+      --discord-glow: rgba(88, 101, 242, 0.4);
+      --gold: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(220, 38, 38, 0.25);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(7, 7, 10, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .logo span {
+      color: var(--crimson);
+      text-shadow: 0 0 10px var(--crimson-glow);
+    }
+    .status-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #22c55e;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 4px 10px;
+      border-radius: 99px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22c55e;
+    }
+    .hero {
+      padding: 44px 20px 32px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 10%, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .hero-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--crimson);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--discord);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px var(--discord-glow);
+    }
+    .value-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 14px 20px;
+      border-radius: 12px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 24px 20px;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 14px 10px;
+      text-align: center;
+    }
+    .stat-val {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--crimson);
+    }
+    .stat-lbl {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      padding: 16px 20px 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-left: 4px solid var(--crimson);
+      margin: 10px 20px 0;
+    }
+    .features {
+      padding: 14px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .feat-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .feat-badge {
+      background: rgba(220, 38, 38, 0.15);
+      color: var(--crimson);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .feat-title {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .feat-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 20px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .studio-plug {
+      display: inline-block;
+      margin-top: 8px;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">SHADOW <span>REIGN</span></div>
+    <div class="status-badge">
+      <div class="status-dot"></div>
+      REVOLUTION ACTIVE
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-tag">AoT: Revolution Syndicate</div>
+    <h1>Rise Above The Titans</h1>
+    <p>Join 500+ warriors dominating daily raids, custom ODM progression, and clan leaderboards.</p>
+    
+    <div class="btn-group">
+      <a href="https://discord.gg/Y4nbVB8fq" class="cta-btn" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.894a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+        </svg>
+        JOIN OFFICIAL DISCORD (500+ WARRIORS)
+      </a>
+
+      <a href="https://aotrevolution.com/changes" class="value-btn" target="_blank">
+        ⚡ VIEW OFFICIAL VALUE LIST & UPDATES
+      </a>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-val">500+</div>
+      <div class="stat-lbl">Members</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">ACTIVE</div>
+      <div class="stat-lbl">Clan Status</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">DAILY</div>
+      <div class="stat-lbl">Raids</div>
+    </div>
+  </div>
+
+  <div class="section-title">Syndicate Operations</div>
+
+  <div class="features">
+    <div class="feat-card">
+      <div class="feat-header">
+        <span class="feat-badge">Raid Squads</span>
+        <div class="feat-title">Titan Extermination</div>
+      </div>
+      <div class="feat-desc">Daily coordinated raid groups farming rare drops, artifact perks, and clan XP.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-header">
+        <span class="feat-badge">Values & Meta</span>
+        <div class="feat-title">Market Trading</div>
+      </div>
+      <div class="feat-desc">Stay updated on trade ratios, scroll values, and character build tier rankings.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-header">
+        <span class="feat-badge">Perks</span>
+        <div class="feat-title">Weekly Giveaways</div>
+      </div>
+      <div class="feat-desc">Clan roll giveaways, custom gamepasses, and dedicated carry roles for active members.</div>
+    </div>
+  </div>
+
+  <footer>
+    <p>SHADOW REIGN SYNDICATE &copy; 2026</p>
+    <a href="https://mikeystudio77.github.io/mikeystudio/" class="studio-plug" target="_blank">Crafted by Mikey's Studio</a>
+  </footer>
+
+</body>
+</html>
+
