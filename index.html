@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHADOW REIGN | AOT:R Server</title>
+  <title>SHADOW REIGN | Official AOT:R Server</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -128,19 +128,18 @@
     .section-header::before {
       content: ''; width: 4px; height: 20px; background: var(--crimson); border-radius: 2px;
     }
-    .grid-duo { display: grid; grid-template-columns: 1fr; gap: 14px; }
-    @media (min-width: 640px) { .grid-duo { grid-template-columns: 1fr 1fr; } }
+    .grid-tri { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 640px) { .grid-tri { grid-template-columns: repeat(3, 1fr); } }
     .custom-card {
       background: var(--bg-card); border: 1px solid var(--border-subtle);
-      border-radius: 14px; padding: 20px;
+      border-radius: 14px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;
     }
-    .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
     .card-title { font-size: 1rem; font-weight: 700; color: #fff; }
     .badge-tag {
       font-size: 0.68rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase;
     }
-    .tag-red { background: rgba(225, 29, 72, 0.2); color: var(--crimson); }
-    .tag-yellow { background: rgba(245, 158, 11, 0.2); color: var(--gold); }
+    .tag-green { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
     .tag-purple { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
     .tag-blue { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
     .card-text { font-size: 0.88rem; color: var(--text-muted); }
@@ -190,7 +189,7 @@
     <section class="hero">
       <div class="hero-badge">OFFICIAL AOT:R SERVER</div>
       <h1>SHADOW REIGN</h1>
-      <p>Daily raid carries, Aberrant missions, trusted trading, and active server giveaways.</p>
+      <p>An active AOT:R community featuring regular events, frequent giveaways, and verified member trading.</p>
       
       <div class="action-group">
         <a href="https://discord.gg/Y4nbVB8fq" class="btn-discord" target="_blank">
@@ -207,49 +206,41 @@
           <div class="stat-name">Members</div>
         </div>
         <div class="stat-pill">
-          <div class="stat-num">24/7</div>
-          <div class="stat-name">Active Raids</div>
+          <div class="stat-num">ACTIVE</div>
+          <div class="stat-name">Community</div>
         </div>
         <div class="stat-pill">
-          <div class="stat-num">DAILY</div>
-          <div class="stat-name">Carries</div>
+          <div class="stat-num">WEEKLY</div>
+          <div class="stat-name">Events</div>
         </div>
       </div>
     </section>
 
     <!-- Server Features -->
     <div class="section-header">What We Offer</div>
-    <div class="grid-duo">
+    <div class="grid-tri">
       <div class="custom-card">
         <div class="card-top">
-          <div class="card-title">Missions & Carries</div>
-          <span class="badge-tag tag-red">Raids</span>
+          <div class="card-title">Active Community</div>
+          <span class="badge-tag tag-green">Chat</span>
         </div>
-        <p class="card-text">Daily mission runs, Aberrant clears, and free carries for server members to easily farm scrolls and materials.</p>
-      </div>
-
-      <div class="custom-card">
-        <div class="card-top">
-          <div class="card-title">Trading</div>
-          <span class="badge-tag tag-yellow">Market</span>
-        </div>
-        <p class="card-text">Official middleman support for safe and verified trades on cosmetics, scrolls, and rare items.</p>
+        <p class="card-text">A chill, non-toxic server space with 500+ active players ready to party up, chat, and share tips.</p>
       </div>
 
       <div class="custom-card">
         <div class="card-top">
           <div class="card-title">Frequent Giveaways</div>
-          <span class="badge-tag tag-purple">Giveaways</span>
+          <span class="badge-tag tag-purple">Rewards</span>
         </div>
-        <p class="card-text">Regular server giveaways including free spins, in-game perks, Robux, and exclusive carry slots.</p>
+        <p class="card-text">Regular community giveaways including free spins, gamepasses, Robux, and exclusive server perks.</p>
       </div>
 
       <div class="custom-card">
         <div class="card-top">
-          <div class="card-title">Events</div>
-          <span class="badge-tag tag-blue">Community</span>
+          <div class="card-title">Good Events</div>
+          <span class="badge-tag tag-blue">Events</span>
         </div>
-        <p class="card-text">Exciting server tournaments, speedrun challenges, and custom community game nights with rewards.</p>
+        <p class="card-text">Fun server tournaments, game nights, speedrun showdowns, and special server milestones with prizes.</p>
       </div>
     </div>
 
@@ -258,15 +249,15 @@
     <div class="rule-list">
       <div class="rule-item">
         <span class="rule-index">01</span>
-        <div><strong>No Toxicity:</strong> Respect members in chat, Discord, and in-game lobbies. Zero toxicity tolerated.</div>
+        <div><strong>No Toxicity:</strong> Respect members in all chat channels and lobbies. Toxicity or hate speech results in a ban.</div>
       </div>
       <div class="rule-item">
         <span class="rule-index">02</span>
-        <div><strong>Use Middleman:</strong> Always trade via trusted server staff middleman to avoid any scams.</div>
+        <div><strong>Safe Trades:</strong> Always use verified server staff middleman to trade items safely.</div>
       </div>
       <div class="rule-item">
         <span class="rule-index">03</span>
-        <div><strong>Stay Active:</strong> Participate in missions, carries, and server events to keep your member status.</div>
+        <div><strong>Stay Active:</strong> Participate in chat and community events to keep your special server roles.</div>
       </div>
     </div>
 
