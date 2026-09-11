@@ -9,39 +9,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #040507;
-      --bg-card: rgba(13, 16, 23, 0.85);
-      --crimson: #e11d48;
-      --crimson-glow: rgba(225, 29, 72, 0.45);
-      --discord: #5865f2;
-      --discord-glow: rgba(88, 101, 242, 0.4);
-      --gold: #f59e0b;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --border: rgba(225, 29, 72, 0.22);
-      --border-subtle: rgba(255, 255, 255, 0.08);
+      --bg-base: #000000;
+      --bg-card: rgba(8, 8, 10, 0.90);
+      --pure-white: #ffffff;
+      --off-white: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --border-subtle: rgba(255, 255, 255, 0.14);
+      --border-light: rgba(255, 255, 255, 0.4);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: var(--bg-base);
-      color: var(--text-main);
+      color: var(--off-white);
       font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.6;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(225, 29, 72, 0.15) 0%, transparent 50%),
-        linear-gradient(180deg, rgba(4, 5, 7, 0.7) 0%, rgba(4, 5, 7, 0.95) 100%),
-        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600&auto=format&fit=crop');
+        radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.04) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.94) 100%),
+        url('image.webp');
       background-size: cover;
       background-attachment: fixed;
-      background-position: center;
+      background-position: center top;
+      min-height: 100vh;
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 18px 24px;
-      background: rgba(4, 5, 7, 0.85);
-      backdrop-filter: blur(14px);
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
       position: sticky;
       top: 0;
@@ -51,126 +48,147 @@
       font-family: 'Cinzel', serif;
       font-size: 1.35rem;
       font-weight: 900;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      color: var(--pure-white);
     }
-    .logo span { color: var(--crimson); text-shadow: 0 0 12px var(--crimson-glow); }
+    .logo span { color: var(--text-muted); }
     .status-badge {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      color: #22c55e;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      padding: 5px 12px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-subtle);
+      padding: 6px 14px;
       border-radius: 99px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
     }
     .status-dot {
-      width: 7px; height: 7px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e;
+      width: 7px; height: 7px; background: #fff; border-radius: 50%; box-shadow: 0 0 8px #fff;
     }
-    .container { width: 100%; max-width: 850px; margin: 0 auto; padding: 0 20px; }
-    .hero { padding: 50px 0 35px; text-align: center; }
-    .hero-badge {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: var(--crimson);
-      background: rgba(225, 29, 72, 0.12);
-      border: 1px solid var(--border);
-      padding: 6px 16px;
-      border-radius: 99px;
-      display: inline-block;
-      margin-bottom: 16px;
-    }
+    .container { width: 100%; max-width: 820px; margin: 0 auto; padding: 0 20px; }
+    
+    .hero { padding: 55px 0 32px; text-align: center; }
     .hero h1 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      font-size: clamp(2.4rem, 7vw, 3.6rem);
       font-weight: 900;
+      letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 12px;
+      color: var(--pure-white);
     }
     .hero p {
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: var(--text-muted);
       max-width: 520px;
       margin: 0 auto 28px;
     }
-    .action-group { display: flex; flex-direction: column; gap: 14px; max-width: 440px; margin: 0 auto; }
+    .action-group { display: flex; flex-direction: column; gap: 14px; max-width: 420px; margin: 0 auto; }
+    
     .btn-discord {
       display: flex; align-items: center; justify-content: center; gap: 10px;
-      background: var(--discord); color: #fff; text-decoration: none;
-      font-weight: 800; font-size: 1rem; padding: 16px 24px; border-radius: 14px;
-      box-shadow: 0 10px 35px var(--discord-glow);
+      background: #fff; color: #000; text-decoration: none;
+      font-weight: 800; font-size: 1rem; padding: 16px 24px; border-radius: 12px;
+      transition: all 0.2s ease;
     }
+    .btn-discord:hover { background: #e2e8f0; }
+
+    .btn-rules {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-subtle);
+      color: #fff; font-weight: 700; font-size: 0.95rem;
+      padding: 14px 20px; border-radius: 12px; cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-rules:hover { border-color: var(--border-light); background: rgba(255, 255, 255, 0.1); }
+
     .btn-values {
       display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.35);
-      color: var(--gold); text-decoration: none; font-weight: 700; font-size: 0.92rem;
-      padding: 14px 20px; border-radius: 14px;
+      background: transparent; border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.88rem;
+      padding: 12px 18px; border-radius: 12px;
     }
+    .btn-values:hover { color: #fff; border-color: var(--border-subtle); }
+
     .stats-bar {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 34px 0 20px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 36px 0 20px;
     }
     .stat-pill {
       background: var(--bg-card); border: 1px solid var(--border-subtle);
-      border-radius: 14px; padding: 14px 10px; text-align: center;
+      border-radius: 12px; padding: 14px 10px; text-align: center;
     }
-    .stat-num { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 900; color: var(--crimson); }
+    .stat-num { font-family: 'Cinzel', serif; font-size: 1.45rem; font-weight: 900; color: #fff; }
     .stat-name { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; }
 
     .section-header {
       font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 900;
-      letter-spacing: 1px; text-transform: uppercase; margin: 40px 0 16px;
-      display: flex; align-items: center; gap: 10px;
+      letter-spacing: 1px; text-transform: uppercase; margin: 45px 0 18px;
+      display: flex; align-items: center; gap: 12px;
     }
     .section-header::before {
-      content: ''; width: 4px; height: 20px; background: var(--crimson); border-radius: 2px;
+      content: ''; width: 4px; height: 18px; background: #fff; border-radius: 2px;
     }
+    
     .grid-tri { display: grid; grid-template-columns: 1fr; gap: 14px; }
     @media (min-width: 640px) { .grid-tri { grid-template-columns: repeat(3, 1fr); } }
     .custom-card {
       background: var(--bg-card); border: 1px solid var(--border-subtle);
-      border-radius: 14px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;
+      border-radius: 14px; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;
     }
     .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
     .card-title { font-size: 1rem; font-weight: 700; color: #fff; }
     .badge-tag {
-      font-size: 0.68rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase;
+      font-size: 0.65rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.12); color: #fff; border: 1px solid var(--border-subtle);
     }
-    .tag-green { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
-    .tag-purple { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
-    .tag-blue { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
     .card-text { font-size: 0.88rem; color: var(--text-muted); }
-
-    .rule-list { display: flex; flex-direction: column; gap: 10px; }
-    .rule-item {
-      display: flex; align-items: flex-start; gap: 12px;
-      background: var(--bg-card); border: 1px solid var(--border-subtle);
-      padding: 14px 18px; border-radius: 12px; font-size: 0.88rem;
-    }
-    .rule-index { font-family: 'Cinzel', serif; font-weight: 900; color: var(--crimson); }
 
     .staff-container { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .staff-card {
       background: var(--bg-card); border: 1px solid var(--border-subtle);
-      border-radius: 14px; padding: 18px; text-align: center;
+      border-radius: 14px; padding: 20px; text-align: center;
     }
-    .staff-role-badge { font-size: 0.72rem; font-weight: 800; color: var(--crimson); text-transform: uppercase; }
-    .staff-username { font-size: 1.05rem; font-weight: 800; color: #fff; margin-top: 2px; }
-    .staff-desc { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+    .staff-role-badge { font-size: 0.72rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+    .staff-username { font-size: 1.05rem; font-weight: 800; color: #fff; margin-top: 4px; }
+    .staff-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* Rules Popup Modal */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px);
+      display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px;
+    }
+    .modal-content {
+      background: #09090b; border: 1px solid var(--border-light);
+      border-radius: 16px; max-width: 600px; width: 100%; max-height: 80vh;
+      overflow-y: auto; padding: 26px; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 18px; background: transparent;
+      border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;
+    }
+    .modal-header {
+      font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 900;
+      color: #fff; margin-bottom: 12px; text-align: center; letter-spacing: 1px;
+    }
+    .modal-intro { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px; text-align: center; }
+    .rule-block { margin-bottom: 20px; }
+    .rule-block h4 { font-size: 0.95rem; color: #fff; margin-bottom: 8px; font-weight: 800; }
+    .rule-block ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .rule-block li { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; padding-left: 12px; border-left: 2px solid #fff; }
+    .rule-block li strong { color: #fff; }
 
     footer {
-      text-align: center; padding: 35px 20px 25px; border-top: 1px solid var(--border-subtle);
-      margin-top: 45px;
+      text-align: center; padding: 40px 20px 30px; border-top: 1px solid var(--border-subtle);
+      margin-top: 50px;
     }
     .footer-brand { font-family: 'Cinzel', serif; font-weight: 900; font-size: 1.05rem; letter-spacing: 2px; }
-    .footer-desc { font-size: 0.8rem; color: var(--text-muted); margin: 4px 0 14px; }
+    .footer-desc { font-size: 0.8rem; color: var(--text-muted); margin: 6px 0 16px; }
     .credits-link {
-      display: inline-block; color: #38bdf8; text-decoration: none; font-weight: 700;
-      font-size: 0.85rem; padding: 6px 14px; border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 99px; background: rgba(56, 189, 248, 0.05);
+      display: inline-block; color: #fff; text-decoration: none; font-weight: 700;
+      font-size: 0.82rem; padding: 6px 16px; border: 1px solid var(--border-subtle);
+      border-radius: 99px; background: rgba(255, 255, 255, 0.05);
     }
   </style>
 </head>
@@ -187,16 +205,18 @@
   <main class="container">
 
     <section class="hero">
-      <div class="hero-badge">OFFICIAL AOT:R SERVER</div>
       <h1>SHADOW REIGN</h1>
-      <p>An active AOT:R community featuring regular events, frequent giveaways, and verified member trading.</p>
+      <p>An active community featuring regular events, frequent giveaways, and verified member trading.</p>
       
       <div class="action-group">
         <a href="https://discord.gg/Y4nbVB8fq" class="btn-discord" target="_blank">
           JOIN OUR DISCORD (500+)
         </a>
+        <button class="btn-rules" onclick="openRules()">
+          ♰ VIEW SERVER GUIDELINES ♰
+        </button>
         <a href="https://aotrevolution.com/changes" class="btn-values" target="_blank">
-          ⚡ AOT:R VALUE LIST & PATCH NOTES
+          AOT:R VALUE LIST & PATCH NOTES
         </a>
       </div>
 
@@ -216,21 +236,21 @@
       </div>
     </section>
 
-    <!-- Server Features -->
+    <!-- 3 Core Offerings -->
     <div class="section-header">What We Offer</div>
     <div class="grid-tri">
       <div class="custom-card">
         <div class="card-top">
           <div class="card-title">Active Community</div>
-          <span class="badge-tag tag-green">Chat</span>
+          <span class="badge-tag">Chat</span>
         </div>
-        <p class="card-text">A chill, non-toxic server space with 500+ active players ready to party up, chat, and share tips.</p>
+        <p class="card-text">A chill, non-toxic server space with active members online 24/7 to party up, discuss tactics, and hang out.</p>
       </div>
 
       <div class="custom-card">
         <div class="card-top">
           <div class="card-title">Frequent Giveaways</div>
-          <span class="badge-tag tag-purple">Rewards</span>
+          <span class="badge-tag">Loot</span>
         </div>
         <p class="card-text">Regular community giveaways including free spins, gamepasses, Robux, and exclusive server perks.</p>
       </div>
@@ -238,26 +258,9 @@
       <div class="custom-card">
         <div class="card-top">
           <div class="card-title">Good Events</div>
-          <span class="badge-tag tag-blue">Events</span>
+          <span class="badge-tag">Events</span>
         </div>
-        <p class="card-text">Fun server tournaments, game nights, speedrun showdowns, and special server milestones with prizes.</p>
-      </div>
-    </div>
-
-    <!-- Server Rules -->
-    <div class="section-header">Server Rules</div>
-    <div class="rule-list">
-      <div class="rule-item">
-        <span class="rule-index">01</span>
-        <div><strong>No Toxicity:</strong> Respect members in all chat channels and lobbies. Toxicity or hate speech results in a ban.</div>
-      </div>
-      <div class="rule-item">
-        <span class="rule-index">02</span>
-        <div><strong>Safe Trades:</strong> Always use verified server staff middleman to trade items safely.</div>
-      </div>
-      <div class="rule-item">
-        <span class="rule-index">03</span>
-        <div><strong>Stay Active:</strong> Participate in chat and community events to keep your special server roles.</div>
+        <p class="card-text">Competitive community challenges, game nights, speedrun showdowns, and special server milestones with prizes.</p>
       </div>
     </div>
 
@@ -279,6 +282,55 @@
 
   </main>
 
+  <!-- Official Server Guidelines Popup -->
+  <div class="modal-overlay" id="rulesModal" onclick="closeRulesOnOverlay(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeRules()">&times;</button>
+      <div class="modal-header">♰ SERVER GUIDELINES ♰</div>
+      <p class="modal-intro">Welcome to 𝘠𝘦𝘢𝘨𝘦𝘳𝘪𝘴𝘵𝘴 𝘊𝘰𝘮𝘮𝘢𝘯𝘥. By remaining in this server, you agree to follow all rules listed below. Ignorance of the rules is not an excuse.</p>
+      
+      <div class="rule-block">
+        <h4>📜 I. GENERAL CONDUCT</h4>
+        <ul>
+          <li><strong>Respect Everyone:</strong> Zero tolerance for harassment, toxicity, bullying, or hate speech.</li>
+          <li><strong>Keep It Clean:</strong> Excessive profanity, slurs, or offensive content will be removed.</li>
+          <li><strong>No Controversial Topics:</strong> Political, religious, or heavily controversial debates are strictly prohibited.</li>
+          <li><strong>No NSFW / Inappropriate Content:</strong> Keep all text, avatars, statuses, and media SFW.</li>
+          <li><strong>Privacy:</strong> Do not share anyone’s private personal information (doxxing/privacy violation).</li>
+        </ul>
+      </div>
+
+      <div class="rule-block">
+        <h4>💬 II. CHAT & PLATFORM SAFETY</h4>
+        <ul>
+          <li><strong>Platform TOS:</strong> Follow both Discord Terms of Service & Roblox Terms of Service.</li>
+          <li><strong>No Spamming:</strong> Do not flood chat with messages, reactions, mass mentions, or emoji walls.</li>
+          <li><strong>Channel Usage:</strong> Keep conversations on-topic and use channels according to their designated focus.</li>
+          <li><strong>Malicious Activity:</strong> No scams, links, impersonation, or exploiting server/game bugs.</li>
+          <li><strong>No Advertising:</strong> Self-promotion, DM advertising, or unauthorized server links are forbidden.</li>
+        </ul>
+      </div>
+
+      <div class="rule-block">
+        <h4>⚔️ III. TRADING & AOTR RULES</h4>
+        <ul>
+          <li><strong>No Cross-Trading / Black Market:</strong> Trading AOTR items for Robux, real money, or cross-game items is strictly prohibited and results in an immediate permanent ban.</li>
+        </ul>
+      </div>
+
+      <div class="rule-block">
+        <h4>🛡️ IV. ENFORCEMENT</h4>
+        <ul>
+          <li><strong>Staff Authority:</strong> Follow staff directions. If you have a dispute, handle it privately via tickets/DMs. Staff have final say in all disciplinary actions (warnings, mutes, kicks, bans).</li>
+        </ul>
+      </div>
+
+      <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 15px;">
+        Use common sense at all times. Rules are subject to updates.
+      </p>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-brand">SHADOW <span>REIGN</span></div>
     <p class="footer-desc">&copy; 2026 Shadow Reign. All rights reserved.</p>
@@ -287,5 +339,20 @@
     </a>
   </footer>
 
+  <script>
+    function openRules() {
+      document.getElementById('rulesModal').style.display = 'flex';
+    }
+    function closeRules() {
+      document.getElementById('rulesModal').style.display = 'none';
+    }
+    function closeRulesOnOverlay(e) {
+      if (e.target.id === 'rulesModal') {
+        closeRules();
+      }
+    }
+  </script>
+
 </body>
-</html>
+                                        </html>
+                                        
